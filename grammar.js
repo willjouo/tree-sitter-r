@@ -266,21 +266,21 @@ module.exports = grammar({
     ),
 
     subset: $ => prec(PREC.SUBSET, seq(
-      $._expression,
+      optional($._expression),
       '[',
       optional($.arguments),
       ']'
     )),
 
     subset2: $ => prec(PREC.SUBSET, seq(
-      $._expression,
+      optional($._expression),
       '[[',
       optional($.arguments),
       ']]'
     )),
 
     dollar: $ => prec.left(PREC.DOLLAR, seq(
-      $._expression,
+      optional($._expression),
       '$',
       choice(
         $.identifier,
@@ -289,9 +289,12 @@ module.exports = grammar({
     )),
 
     slot: $ => prec.left(PREC.DOLLAR, seq(
-      $._expression,
+      optional($._expression),
       '@',
-      $.identifier
+      choice(
+        $.identifier,
+        $.string
+      )
     )),
 
     namespace_get: $ => prec.left(PREC.NS_GET, seq(
