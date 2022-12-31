@@ -1,5 +1,5 @@
 {
-  "name": "tree-sitter-r",
+  "name": "@willjouo/tree-sitter-r",
   "version": "0.0.1",
   "description": "R grammar for tree-sitter",
   "main": "bindings/node",
@@ -17,7 +17,8 @@
     "tree-sitter-cli": "^0.20.3"
   },
   "scripts": {
-    "test": "tree-sitter test"
+    "test": "tree-sitter test",
+    "install": "node-gyp rebuild"
   },
   "tree-sitter": [
     {
@@ -28,5 +29,17 @@
       ],
       "first-line-regex": "#!.*\\bRscript$"
     }
-  ]
+  ],
+  "gypfile": true,
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willjouo/tree-sitter-r.git"
+  },
+  "bugs": {
+    "url": "https://github.com/willjouo/tree-sitter-r/issues"
+  },
+  "homepage": "https://github.com/willjouo/tree-sitter-r#readme"
 }

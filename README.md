@@ -1,3 +1,5 @@
+# This is a fork only for publishing current version on npm for convenience. See https://github.com/r-lib/tree-sitter-r/issues/41 for the official package publishing.
+
 tree-sitter-r
 ===========================
 
